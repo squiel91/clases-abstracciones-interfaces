@@ -1,5 +1,7 @@
-public class Camion extends Vehiculo {
+public class Camion extends Vehiculo implements Estacionable, Recargable {
   double toneladasCargadas;
+  private boolean estacionado = true;
+  private double nivelCombustible = 0;
 
   // contructor Camion
   Camion(int cantRuedas) {
@@ -9,6 +11,7 @@ public class Camion extends Vehiculo {
   }
 
   void cargar(double carga) {
+    System.out.println(this.cantRuedas);
     toneladasCargadas += carga;
   }
 
@@ -22,5 +25,23 @@ public class Camion extends Vehiculo {
   // aca estoy implementando el metodo abstracto de la superclase Vehiculo
   public void dondeEstas() {
     System.out.println("Este camion esta en " + posicion.x + "," + posicion.y);
+  }
+
+  // Implementacion de Estacionable
+  public void estacionar(boolean e) {
+    estacionado = e;
+  }
+
+  public boolean estaEstacionado() {
+    return estacionado;
+  }
+
+  // Implementacion de Recargable
+  public void recargar() {
+    nivelCombustible = 1;
+  }
+
+  public double nivelCombustible() {
+    return nivelCombustible;
   }
 }

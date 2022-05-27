@@ -1,7 +1,7 @@
 // como tiene un metodo abstracto entonces la clase debe, si o si, ser abstracta
 abstract class Vehiculo {
-  Posicion posicion;
-  int cantRuedas;
+  public Posicion posicion;
+  protected int cantRuedas;
 
   // constructor de Vehiculo
   public Vehiculo(int cantRuedas) {
